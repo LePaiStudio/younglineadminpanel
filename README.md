@@ -1,14 +1,4 @@
-# antd-demo
-
-## Environment
-
-```
-node >= 4
-```
-
-## Code Style
-
-https://github.com/airbnb/javascript
+# Young-Line Wechat AdminPanel
 
 ## Develop
 
