@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import App from '../components/App';
 import NotFound from '../components/NotFound';
 import { Menu, Breadcrumb, Icon } from 'antd';
+var locale = require('../locale');
 const SubMenu = Menu.SubMenu;
 
 const Routes = ({ history }) =>
@@ -10,11 +11,8 @@ const Routes = ({ history }) =>
         <div className="ant-layout-logo"></div>
 	        <Menu mode="inline" theme="dark"
 	          defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}>
-	          <SubMenu key="sub1" title={<span><Icon type="user" />导航一</span>}>
-	          	<Menu.Item key="1">选项1</Menu.Item>
-	            <Menu.Item key="2">选项2</Menu.Item>
-	            <Menu.Item key="3">选项3</Menu.Item>
-	            <Menu.Item key="4">选项4</Menu.Item>
+	          <SubMenu key="sub1" title={<span><Icon type="user" />{locale.tabs.shouye}</span>}>
+	          	<Menu.Item key="1">{locale.tabs.gaikuang}</Menu.Item>
 	          </SubMenu>
 	          <SubMenu key="sub2" title={<span><Icon type="laptop" />导航二</span>}>
 	            <Menu.Item key="5">选项5</Menu.Item>
@@ -34,9 +32,8 @@ const Routes = ({ history }) =>
         <div className="ant-layout-header"></div>
         <div className="ant-layout-breadcrumb">
           <Breadcrumb>
-            <Breadcrumb.Item>首页</Breadcrumb.Item>
-            <Breadcrumb.Item>应用列表</Breadcrumb.Item>
-            <Breadcrumb.Item>某应用</Breadcrumb.Item>
+            <Breadcrumb.Item>{locale.tabs.shouye}</Breadcrumb.Item>
+            <Breadcrumb.Item>{locale.tabs.gaikuang}</Breadcrumb.Item>
           </Breadcrumb>
         </div>
         <div className="ant-layout-container">
@@ -47,7 +44,7 @@ const Routes = ({ history }) =>
           </div>
         </div>
         <div className="ant-layout-footer">
-        Ant Design 版权所有 © 2015 由蚂蚁金服体验技术部支持
+        	{locale.routes_main.copyright}
         </div>
       </div>
     </div>;
