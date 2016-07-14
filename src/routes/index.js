@@ -8,7 +8,7 @@ const SubMenu = Menu.SubMenu;
 
 var Routes = React.createClass({
   getInitialState() {
-    return {height:document.documentElement.clientHeight-128};
+    return {onTab:'index_intro',breadcrumb_index:locale.tabs.home,breadcrumb_secondIndex:locale.tabs.index_intro};
   },
   render() {
     return (
@@ -60,8 +60,8 @@ var Routes = React.createClass({
         <div className="ant-layout-header"></div>
         <div className="ant-layout-breadcrumb">
           <Breadcrumb>
-            <Breadcrumb.Item>{locale.tabs.home}</Breadcrumb.Item>
-            <Breadcrumb.Item>{locale.tabs.gaikuang}</Breadcrumb.Item>
+            <Breadcrumb.Item>{this.State.breadcrumb_index}</Breadcrumb.Item>
+            <Breadcrumb.Item>{this.State.breadcrumb_secondIndex}</Breadcrumb.Item>
           </Breadcrumb>
         </div>
         <div className="ant-layout-container">
