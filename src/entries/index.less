@@ -5,9 +5,18 @@
 	body {
 		background: #fafafa;
 	}
+	.ant-layout-main{
+		height:100%;
+	}
 	.ant-layout-aside {
 		position: relative;
 		min-height: 100%;
+		height:100%;
+		overflow: hidden;
+	}
+	.ant-layout-sider::-webkit-scrollbar
+	{
+		width:0px;
 	}
 	.ant-layout-aside .ant-layout-logo {
 		width: 150px;
@@ -40,6 +49,7 @@
 	}
 	.ant-layout-aside .ant-layout-container {
 		margin: 24px 16px;
+		height: ~"calc(100% - 184px)";
 	}
 	.ant-layout-aside .ant-layout-content {
 		background: #fff;

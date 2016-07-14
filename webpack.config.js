@@ -17,7 +17,6 @@ module.exports = function (webpackConfig) {
   //   test: /\.jsx?$/,
   //   loader: 'es3ify-loader',
   // });
-
   // Parse all less files as css module.
   webpackConfig.module.loaders.forEach(function(loader, index) {
     if (typeof loader.test === 'function' && loader.test.toString().indexOf('\\.less$') > -1) {
