@@ -1,6 +1,6 @@
 module.exports = {
 	tabs: {
-		home: '常用',
+		index: '常用',
 		index_intro: '概况',
 		index_charts: '数据报表',
 

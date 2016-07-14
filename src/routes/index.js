@@ -8,16 +8,33 @@ const SubMenu = Menu.SubMenu;
 
 var Routes = React.createClass({
   getInitialState() {
-    return {onTab:'index_intro',breadcrumb_index:locale.tabs.home,breadcrumb_secondIndex:locale.tabs.index_intro};
+    return {onTab:'index_intro',breadcrumbIndex:locale.tabs.index,breadcrumbSecondIndex:locale.tabs.index_intro, openKeys:['index'], selectedKeys:['index_intro']};
+  },
+  routeOnOpen(info) {
+    this.setState({
+          openKeys: info.open ? info.keyPath : info.keyPath.slice(1),
+    });
+  },
+  routeOnSelect(info) {
+    this.setState({
+          selectedKeys: [info.key],
+          breadcrumbIndex: locale.tabs[info.key.split('_')[0]],
+          breadcrumbSecondIndex: locale.tabs[info.key]
+    });
   },
   render() {
     return (
     <div className="ant-layout-aside">
       <aside className="ant-layout-sider">
-        <div className="ant-layout-logo"></div>
-	        <Menu mode="inline" theme="dark"
-	          defaultSelectedKeys={['index_intro']} defaultOpenKeys={['home']}>
-	          <SubMenu key="home" title={<span><Icon type="home" />{locale.tabs.home}</span>}>
+        <div className="ant-layout-logo"><Iconfont type="youngline" /></div>
+	        <Menu
+            mode="inline"
+            theme="dark"
+            onOpen={this.routeOnOpen}
+            onSelect={this.routeOnSelect}
+            openKeys={this.state.openKeys}
+	          selectedKeys={this.state.selectedKeys}>
+	          <SubMenu key="index" title={<span><Icon type="home" />{locale.tabs.index}</span>}>
 	          	<Menu.Item key="index_intro">{locale.tabs.index_intro}</Menu.Item>
               <Menu.Item key="index_charts">{locale.tabs.index_charts}</Menu.Item>
 	          </SubMenu>
@@ -60,8 +77,8 @@ var Routes = React.createClass({
         <div className="ant-layout-header"></div>
         <div className="ant-layout-breadcrumb">
           <Breadcrumb>
-            <Breadcrumb.Item>{this.State.breadcrumb_index}</Breadcrumb.Item>
-            <Breadcrumb.Item>{this.State.breadcrumb_secondIndex}</Breadcrumb.Item>
+            <Breadcrumb.Item>{this.state.breadcrumbIndex}</Breadcrumb.Item>
+            <Breadcrumb.Item>{this.state.breadcrumbSecondIndex}</Breadcrumb.Item>
           </Breadcrumb>
         </div>
         <div className="ant-layout-container">

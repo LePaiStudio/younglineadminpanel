@@ -1,6 +1,10 @@
 @font-face {
 	font-family: "iconfont";
-	src: url('iconfont.ttf') format('truetype');
+	src: url('iconfont.eot'); /* IE9*/
+	src: url('iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+	url('iconfont.woff') format('woff'), /* chrome, firefox */
+	url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+	url('iconfont.svg') format('svg'); /* iOS 4.1- */
 }
 .iconfont {
 	font-family: "iconfont" !important;
@@ -12,6 +16,6 @@
 .iconfont:before{
 	font-family: "iconfont" !important;
 }
-.icon-weixin:before {
-	content: "\e600";
-}
+
+.icon-weixin:before { content: "\e600"; }
+.icon-youngline:before { content: "\e601"; }
